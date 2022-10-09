@@ -141,13 +141,13 @@ root = Tk()
 root.title("Sliding Puzzle")
 empty_square = (size-1, size-1)
 images = (
-    Image.open("/Users/neerajarora/Downloads/sliding_puzzle_image1.webp"),
-    Image.open("/Users/neerajarora/Downloads/sliding_puzzle_image2.png"),
-    Image.open("/Users/neerajarora/Downloads/sliding_puzzle_image3.webp"),
-    Image.open("/Users/neerajarora/Downloads/sliding_puzzle_image4.jpeg"),
-    Image.open("/Users/neerajarora/Downloads/sliding_puzzle_image5.webp")
+    "/Users/neerajarora/Downloads/sliding_puzzle_image1.webp",
+    "/Users/neerajarora/Downloads/sliding_puzzle_image2.png",
+    "/Users/neerajarora/Downloads/sliding_puzzle_image3.webp",
+    "/Users/neerajarora/Downloads/sliding_puzzle_image4.jpeg",
+    "/Users/neerajarora/Downloads/sliding_puzzle_image5.webp"
 )
-sliced_image = segment(random.choice(images), size)
+sliced_image = segment(Image.open(random.choice(images)), size)
 button_images = [ImageTk.PhotoImage(image=Image.fromarray(sliced_image[i]).resize((100,100))) for i in range(size**2-1)]
 init_time = time.time()
 pieces = [MoveableButton((i%size, i//size), str(i+1), root, image=button_images[i]) for i in range(size**2-1)]
