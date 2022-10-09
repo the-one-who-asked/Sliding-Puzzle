@@ -19,7 +19,7 @@ Press any key (other than the contol keys listed below) to shuffle the board.
 
 **Down**: Move a piece down onto the empty square
 
-You can also **click on a piece** to slide all pieces between that piece and the empty square onto the empty square.
+You can also **click on a piece** to slide all pieces between that piece and the empty square (including the piece itself) onto the empty square.
 
 Arrow key while holding **shift**: Slide an entire row, from the direction of the arrow you've chosen, onto the empty square
 
