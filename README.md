@@ -6,7 +6,7 @@ A board is built with in a square arrangement of pieces, with one piece in the c
 
 Let's see how fast you can solve it!
 
-Wikihow provides an elegant guide on how to solve [here]([url](https://www.wikihow.com/Solve-Slide-Puzzles)).
+Wikihow provides an elegant guide on how to solve [here]([url](https://www.wikihow.com/Solve-Slide-Puzzles))
 
 # Controls
 Press any key (other than the contol keys listed below) to shuffle the board.
