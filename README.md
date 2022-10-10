@@ -9,18 +9,18 @@ Let's see how fast you can solve it!
 Wikihow provides an elegant guide on how to solve [here](https://www.wikihow.com/Solve-Slide-Puzzles).
 
 # Controls
-Press **any key** (other than the contol keys listed below) to shuffle the board.
+Press *any key* (other than the contol keys listed below) to shuffle the board.
 
-**Left**: Move the piece to the right of of the empty square left onto the empty square, essentially swapping that piece's position with that of the empty square.
+*Left*: Move the piece to the right of of the empty square left onto the empty square, essentially swapping that piece's position with that of the empty square.
 
-**Right**: Move a piece right onto the empty square
+*Right*: Move a piece right onto the empty square
 
-**Up**: Move a piece up onto the empty square
+*Up*: Move a piece up onto the empty square
 
-**Down**: Move a piece down onto the empty square
+*Down*: Move a piece down onto the empty square
 
-You can also **click on a piece** to slide all pieces between that piece and the empty square (including the piece itself) onto the empty square.
+You can also *click on a piece* to slide all pieces between that piece and the empty square (including the piece itself) onto the empty square.
 
-Arrow key while holding **shift**: Slide an entire row, from the direction of the arrow you've chosen, onto the empty square
+Arrow key while holding *shift*: Slide an entire row, from the direction of the arrow you've chosen, onto the empty square
 
-**Number key**: Choose the number of pieces that are slid onto the empty square when an arrow key is pressed while holding shift. The default is an entire row of pieces. You can press **0** to reset this number to the default (an entire row).
+*Number key*: Choose the number of pieces that are slid onto the empty square when an arrow key is pressed while holding shift. The default is an entire row of pieces. You can press *0* to reset this number to the default (an entire row).
