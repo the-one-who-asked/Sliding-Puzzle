@@ -1,5 +1,5 @@
 # Sliding-Puzzle
-A small, simple game written in python. It's a combination game that challenges the player to slide pieces along certain routes in order to get them in the right order. The player can choose the board size by enterring a number at the start, with 3 being at easy difficulty, 4 at medium,  5 at hard and 7 at expert. Of course, the player can choose higher, difficulties, lower difficulties or anything in between. Note that most laptops won't be capable of displaying any size larger than 9, and that any size above 10 can cause a problem with the shift + arrow key technique since no more than 9 pieces can be moved at a time like so after the player has already selected a number for the shift key. 
+A small, simple game written in python. It's a combination game that challenges the player to slide pieces along certain routes in order to get them in the right order. The player can choose the board size by enterring a number at the start, with 3 being at easy difficulty, 4 at medium,  5 at hard and 7 at expert. Of course, the player can choose higher, difficulties, lower difficulties or anything in between. Note that any size above 12 can take quite a bit of time to generate but quite a while to shuffle.
 
 # Rules
 A board is built with in a square arrangement of pieces, with one piece in the corner missing. The pieces on the board are then shuffled to create a random arrangement, but with pieces still labelled with their original order. The player must now slide pieces adjacent to the empty square into the empty square to swap the position of this piece with the position of the empty square. The player can push groups of pieces in the same row or column as the empty square to move them all in one direction at once. The player must continuously use these two techniques to get the pieces back into their original position.
@@ -23,4 +23,4 @@ You can also **click on a piece** to slide all pieces between that piece and the
 
 Arrow key while holding **shift**: Slide an entire row, from the direction of the arrow you've chosen, onto the empty square
 
-**Number key**: Choose the number of pieces that are slid onto the empty square when an arrow key is pressed while holding shift. The default is an entire row of pieces.
+**Number key**: Choose the number of pieces that are slid onto the empty square when an arrow key is pressed while holding shift. The default is an entire row of pieces. You can press **0** to reset this number to the default (an entire row).
