@@ -121,7 +121,8 @@ def segment(image, segments):
 
 def shift_control(event):
     global shift
-    shift = int(event.keysym)
+    global size
+    shift = int(event.keysym) if int(event.keysym) else size-1
 
 def shuffle(event, events, size):
     global empty_square
