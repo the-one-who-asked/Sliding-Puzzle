@@ -1,4 +1,4 @@
-# Sliding-Puzzle
+# Sliding Puzzle
 A small, simple game written in python. It's a combination game that challenges the player to slide pieces along certain routes in order to get them in the right order. The player can choose the board size by enterring a number at the start, with 3 being at easy difficulty, 4 at medium,  5 at hard and 7 at expert. Of course, the player can choose higher, difficulties, lower difficulties or anything in between. Note that any size above 12 can take quite a bit of time to generate but quite a while to shuffle.
 
 # Rules
