@@ -9,11 +9,14 @@ class MoveableButton(Button):
     def __init__(self, location, idx, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.location = location
-        self.grid(column=location[0], row=location[1])
+        self.grid(column=location[0], row=location[1], sticky="news")
         self.idx = idx
+        self.img = img
         self.label = Label(root, text=idx)
         self.label.grid(column=self.location[0], row=self.location[1], sticky="nw")
-        self.configure(command=self.line_move, width=100, height=100, borderwidth=0, highlightthickness=0)
+        self.configure(command=self.line_move, borderwidth=0, highlightthickness=0)
+        self.image = ImageTk.PhotoImage(image=self.img)
+        self.configure(image=self.image)
 
     def move(self):
         global empty_square
@@ -35,6 +38,14 @@ class MoveableButton(Button):
                         line_pieces.append((piece, abs(obj-alt)))
                 for piece in sorted(line_pieces, key=lambda x: x[1]):
                     piece[0].move()
+    
+    def expand(self):
+        global size
+        width = root.winfo_width() // size - 2
+        height = root.winfo_height() // size - 2
+        self.image = ImageTk.PhotoImage(image=self.img.resize((width, height)))
+        self.configure(image=self.image)
+        root.after(1000, self.expand)
 
 
 def leftkey_pressed(event, shift=0):
@@ -137,20 +148,31 @@ def check_completion():
 
 
 size = int(input("Enter a board size (3 - 7 are recommended): "))
+
 root = Tk()
 root.title("Sliding Puzzle")
+for i in range(size):
+    root.rowconfigure(i, weight=1)
+    root.columnconfigure(i, weight=1)
+
 empty_square = (size-1, size-1)
 images = (
-    "/Users/neerajarora/Downloads/sliding_puzzle_image1.webp",
-    "/Users/neerajarora/Downloads/sliding_puzzle_image2.png",
-    "/Users/neerajarora/Downloads/sliding_puzzle_image3.webp",
-    "/Users/neerajarora/Downloads/sliding_puzzle_image4.jpeg",
-    "/Users/neerajarora/Downloads/sliding_puzzle_image5.webp"
+    "sliding_puzzle_image1.webp",
+    "sliding_puzzle_image2.png",
+    "sliding_puzzle_image3.webp",
+    "sliding_puzzle_image4.jpeg",
+    "sliding_puzzle_image5.webp",
+    "sliding_puzzle_image6.jpeg",
+    "sliding_puzzle_image7.jpg"
 )
 sliced_image = segment(Image.open(random.choice(images)), size)
-button_images = [ImageTk.PhotoImage(image=Image.fromarray(sliced_image[i]).resize((100,100))) for i in range(size**2-1)]
+length = (3*root.winfo_screenheight()) // (4*size)
+button_images = [Image.fromarray(sliced_image[i]).resize((length,length)) for i in range(size**2-1)]
 init_time = time.time()
-pieces = [MoveableButton((i%size, i//size), str(i+1), root, image=button_images[i]) for i in range(size**2-1)]
+pieces = [MoveableButton((i%size, i//size), str(i+1), image=button_images[i], root) for i in range(size**2-1)]
+for piece in pieces:
+    root.after(1000, piece.expand)
+
 events = [leftkey_pressed, rightkey_pressed, upkey_pressed, downkey_pressed]
 shift = size
 for i in range(10):
