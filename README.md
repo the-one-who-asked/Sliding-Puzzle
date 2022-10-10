@@ -9,7 +9,7 @@ Let's see how fast you can solve it!
 Wikihow provides an elegant guide on how to solve [here](https://www.wikihow.com/Solve-Slide-Puzzles).
 
 # Controls
-Press any key (other than the contol keys listed below) to shuffle the board.
+Press **any key** (other than the contol keys listed below) to shuffle the board.
 
 **Left**: Move the piece to the right of of the empty square left onto the empty square, essentially swapping that piece's position with that of the empty square.
 
