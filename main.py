@@ -219,13 +219,13 @@ for i in range(11):
 
 empty_square = (size - 1, size - 1)
 images = (
-    r"C:\Users\AnshArora\Downloads\sliding_puzzle_image1.webp",
-    r"C:\Users\AnshArora\Downloads\sliding_puzzle_image2.png",
-    r"C:\Users\AnshArora\Downloads\sliding_puzzle_image3.webp",
-    r"C:\Users\AnshArora\Downloads\sliding_puzzle_image4.png",
-    r"C:\Users\AnshArora\Downloads\sliding_puzzle_image5.webp",
-    r"C:\Users\AnshArora\Downloads\sliding_puzzle_image6.jpg",
-    r"C:\Users\AnshArora\Downloads\sliding_puzzle_image7.jpg"
+    "https://github.com/the-one-who-asked/Sliding-Puzzle/blob/63bb7ae485e91dec4981badddc04be4196a1e3d6/images/sliding_puzzle_image1.webp",
+    "https://github.com/the-one-who-asked/Sliding-Puzzle/blob/63bb7ae485e91dec4981badddc04be4196a1e3d6/images/sliding_puzzle_image1.webp",
+    "https://github.com/the-one-who-asked/Sliding-Puzzle/blob/63bb7ae485e91dec4981badddc04be4196a1e3d6/images/sliding_puzzle_image1.webp",
+    "https://github.com/the-one-who-asked/Sliding-Puzzle/blob/63bb7ae485e91dec4981badddc04be4196a1e3d6/images/sliding_puzzle_image1.webp",
+    "https://github.com/the-one-who-asked/Sliding-Puzzle/blob/63bb7ae485e91dec4981badddc04be4196a1e3d6/images/sliding_puzzle_image1.webp",
+    "https://github.com/the-one-who-asked/Sliding-Puzzle/blob/63bb7ae485e91dec4981badddc04be4196a1e3d6/images/sliding_puzzle_image1.webp",
+    "https://github.com/the-one-who-asked/Sliding-Puzzle/blob/63bb7ae485e91dec4981badddc04be4196a1e3d6/images/sliding_puzzle_image1.webp"
 )
 sliced_image = segment(Image.open(random.choice(images)), size)
 button_images = [Image.fromarray(sliced_image[i]).resize((length,length)) for i in range(size**2-1)]
