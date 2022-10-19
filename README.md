@@ -25,4 +25,4 @@ Arrow key while holding *shift*: Slide an entire row, from the direction of the 
 
 *Number key*: Choose the number of pieces that are slid onto the empty square when an arrow key is pressed while holding shift. The default is an entire row of pieces. You can press *0* to reset this number to the default (an entire row).
 
-Use the *search bar* to search for a piece you can't find (this can be useful if you're playing with a large arrangement of pieces).
+Use the *search bar* to search for a piece you can't find (this can be useful if you're playing with a large arrangement of pieces). The piece with the id enterred will be highlighted in yellow and the piece in the position which your selected piece your piece should be in will be highlighted in orange. If the piece is in the correct place, it will be highlighted in green.
