@@ -3,6 +3,8 @@ from PIL import Image, ImageTk
 import random
 import numpy as np
 import time
+import requests
+from io import BytesIO
 from ctypes import windll
 
 
@@ -218,16 +220,17 @@ for i in range(11):
     stats.rowconfigure(i, weight=1, minsize=(length*size)//11)
 
 empty_square = (size - 1, size - 1)
-images = (
+url = (
     "https://github.com/the-one-who-asked/Sliding-Puzzle/blob/63bb7ae485e91dec4981badddc04be4196a1e3d6/images/sliding_puzzle_image1.webp",
-    "https://github.com/the-one-who-asked/Sliding-Puzzle/blob/63bb7ae485e91dec4981badddc04be4196a1e3d6/images/sliding_puzzle_image1.webp",
-    "https://github.com/the-one-who-asked/Sliding-Puzzle/blob/63bb7ae485e91dec4981badddc04be4196a1e3d6/images/sliding_puzzle_image1.webp",
-    "https://github.com/the-one-who-asked/Sliding-Puzzle/blob/63bb7ae485e91dec4981badddc04be4196a1e3d6/images/sliding_puzzle_image1.webp",
-    "https://github.com/the-one-who-asked/Sliding-Puzzle/blob/63bb7ae485e91dec4981badddc04be4196a1e3d6/images/sliding_puzzle_image1.webp",
-    "https://github.com/the-one-who-asked/Sliding-Puzzle/blob/63bb7ae485e91dec4981badddc04be4196a1e3d6/images/sliding_puzzle_image1.webp",
-    "https://github.com/the-one-who-asked/Sliding-Puzzle/blob/63bb7ae485e91dec4981badddc04be4196a1e3d6/images/sliding_puzzle_image1.webp"
+    "https://github.com/the-one-who-asked/Sliding-Puzzle/blob/63bb7ae485e91dec4981badddc04be4196a1e3d6/images/sliding_puzzle_image2.png",
+    "https://github.com/the-one-who-asked/Sliding-Puzzle/blob/63bb7ae485e91dec4981badddc04be4196a1e3d6/images/sliding_puzzle_image3.webp",
+    "https://github.com/the-one-who-asked/Sliding-Puzzle/blob/63bb7ae485e91dec4981badddc04be4196a1e3d6/images/sliding_puzzle_image4.png",
+    "https://github.com/the-one-who-asked/Sliding-Puzzle/blob/63bb7ae485e91dec4981badddc04be4196a1e3d6/images/sliding_puzzle_image5.webp",
+    "https://github.com/the-one-who-asked/Sliding-Puzzle/blob/63bb7ae485e91dec4981badddc04be4196a1e3d6/images/sliding_puzzle_image6.jpg",
+    "https://github.com/the-one-who-asked/Sliding-Puzzle/blob/63bb7ae485e91dec4981badddc04be4196a1e3d6/images/sliding_puzzle_image7.jpg"
 )
-sliced_image = segment(Image.open(random.choice(images)), size)
+response = requests.get(random.choice(url))
+sliced_image = segment(Image.open(BytesIO(response.content)), size)
 button_images = [Image.fromarray(sliced_image[i]).resize((length,length)) for i in range(size**2-1)]
 pieces = [MoveableButton((i%size, i//size), str(i+1), button_images[i], board) for i in range(size**2-1)]
 for piece in pieces:
@@ -238,7 +241,8 @@ timer.grid(row=0, column=0, ipadx=1, ipady=1, sticky="nw")
 claim = Label(stats, text="Made by Ansh Arora", bd=0, bg="#444444", fg="#e1ad01")
 claim.grid(row=10, column=0, sticky="s")
 
-icon_image = ImageTk.PhotoImage(image=Image.open(r"C:\Users\AnshArora\Downloads\search_icon.png").resize((25, 25)))
+response = requests.get("https://github.com/the-one-who-asked/Sliding-Puzzle/blob/7c0b5d8262d4169c40e4073a32b88dc3631ff2b1/images/search_icon.png")
+icon_image = ImageTk.PhotoImage(image=Image.open(BytesIO(response.content)).resize((25, 25)))
 search_icon = Label(search_box, image=icon_image, bg="#444444", bd=2, width=25)
 search_icon.grid(column=0, row=0, sticky="news")
 search_var = StringVar()
